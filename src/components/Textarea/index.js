@@ -1,5 +1,6 @@
 import React from "react";
 import nanoid from "nanoid";
+import "./styles.scss";
 
 export const Textarea = props => {
   const [id] = React.useState(nanoid);
@@ -7,7 +8,7 @@ export const Textarea = props => {
   const { value, onChange, cols = "80", rows = "10" } = props;
   return (
     <textarea
-      name={name}
+      name={`textarea-${name}`}
       id={id}
       cols={cols}
       rows={rows}
