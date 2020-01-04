@@ -4,6 +4,7 @@ import { textSelector } from "../../reducers/textReducer";
 import { Textarea } from "../../components/Textarea";
 import { setTextAction } from "../../actions/textActions";
 import * as nanoid from "nanoid";
+import { columnsChangingHandler } from "../../utils";
 
 const Layout = props => {
   const [id] = React.useState(nanoid);
@@ -12,24 +13,7 @@ const Layout = props => {
   const { text, setTextAction } = props;
 
   useEffect(() => {
-    if (columns !== 1) {
-      const splitText = text.split(" ");
-      const length = splitText.length;
-      const firstCol = [
-        ...splitText.slice(0, Math.round(splitText.length / 2))
-      ].join(" ");
-      const secondCol = [
-        ...splitText.slice(Math.round(splitText.length / 2))
-      ].join(" ");
-      console.log(firstCol);
-      console.log(secondCol);
-      changeTextInColumns([
-        { text: firstCol, id: "first" },
-        { text: secondCol, id: "second" }
-      ]);
-    } else {
-      changeTextInColumns([{ text: text, id: "first" }]);
-    }
+    columnsChangingHandler(columns, text, changeTextInColumns);
   }, [columns, text]);
 
   const changeColumnsValue = val => () => {
