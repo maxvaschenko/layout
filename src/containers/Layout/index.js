@@ -52,18 +52,10 @@ const Layout = props => {
     <div className="Layout">
       <div className="Layout_buttons">
         <div className="Layout_buttons-item">
-          <Button
-            onClick={changeColumnsValue(1)}
-            text={"column"}
-            image={one}
-          />
+          <Button onClick={changeColumnsValue(1)} text={"column"} image={one} />
         </div>
         <div className="Layout_buttons-item">
-          <Button
-            onClick={changeColumnsValue(2)}
-            text={"column"}
-            image={two}
-          />
+          <Button onClick={changeColumnsValue(2)} text={"column"} image={two} />
         </div>
         <div className="Layout_buttons-item">
           <Button
@@ -80,8 +72,8 @@ const Layout = props => {
               value={item.text}
               onChange={setTextToStore(item.id)}
               key={id + index}
-              rows={"50"}
-              className={"mr-2"}
+              rows={window.screen.width > 801 ? "50" : "20"}
+              className={window.screen.width > 801 ? "mr-2" : 'mb-2'}
             />
           );
         })}

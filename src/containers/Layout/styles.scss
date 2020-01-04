@@ -1,11 +1,20 @@
 .Layout {
   display: flex;
+  @media screen and (max-width: 801px) {
+    flex-direction: column;
+    align-items: center;
+  }
   &_buttons {
     padding-top: 2em;
     width: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media screen and (max-width: 801px) {
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-around;
+    }
     &-item {
       padding-bottom: 0.3em;
     }
@@ -15,5 +24,9 @@
     display: flex;
     justify-content: center;
     padding-top: 2em;
+    @media screen and (max-width: 801px) {
+      flex-direction: column;
+      width: 95%;
+    }
   }
 }
