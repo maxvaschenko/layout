@@ -13,6 +13,10 @@ const Layout = props => {
   const { text, setTextAction } = props;
 
   useEffect(() => {
+    document.title = "Layout";
+  }, []);
+
+  useEffect(() => {
     columnsChangingHandler(columns, text, changeTextInColumns);
   }, [columns, text]);
 

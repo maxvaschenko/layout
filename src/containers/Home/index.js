@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "./style.scss";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { setTextAction } from "../../actions/textActions";
 import { Textarea } from "../../components/Textarea";
+import "./style.scss";
 
 const Home = props => {
   const [initialText, changeInitialText] = useState("");
@@ -23,10 +23,19 @@ const Home = props => {
 
   return (
     <div className="Home">
-      <Textarea value={initialText} onChange={changeTextAreaValue} />
-      <Link to={"/layout"}>
-        <button onClick={setTextToStore}>LAYOUT</button>
-      </Link>
+      <div className="textContainer">
+        <h2>Enter your text below pls</h2>
+        <Textarea
+          value={initialText}
+          onChange={changeTextAreaValue}
+          rows={"40"}
+        />
+        <div className="linkContainer">
+          <Link to={"/layout"}>
+            <button onClick={setTextToStore}>LAYOUT</button>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

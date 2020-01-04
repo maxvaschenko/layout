@@ -1,3 +1,37 @@
 textarea {
-  resize: vertical;
+  resize: none;
+  outline: none;
+  border: 1px solid #989898;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+button {
+  outline: none;
+  border: none;
+  background: #267eff;
+  width: 100px;
+  height: 2em;
+  color: white;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+h2 {
+  margin: 0;
+  text-align: left;
+  padding-bottom: 1em;
+}
+
+.Home {
+  display: flex;
+  justify-content: center;
+  .textContainer {
+    padding-top: 2em;
+  }
+  .linkContainer {
+    padding-top: 1em;
+    text-align: right;
+  }
 }
