@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./style.scss";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { setTextAction } from "../../actions/textActions";
 
-export const Home = () => {
-  const [initialText, changeInitialText] = useState('');
+const Home = props => {
+  const [initialText, changeInitialText] = useState("");
+  const { setTextAction } = props;
+
   useEffect(() => {
     document.title = "Home";
   }, []);
@@ -12,7 +16,9 @@ export const Home = () => {
     changeInitialText(e.target.value);
   };
 
-  console.log(initialText);
+  const setTextToStore = () => {
+    setTextAction(initialText);
+  };
 
   return (
     <div className="Home">
@@ -25,8 +31,14 @@ export const Home = () => {
         onChange={changeTextAreaValue}
       />
       <Link to={"/layout"}>
-        <button>LAYOUT</button>
+        <button onClick={setTextToStore}>LAYOUT</button>
       </Link>
     </div>
   );
 };
+
+const mapDispatchToProps = {
+  setTextAction
+};
+
+export default connect(null, mapDispatchToProps)(Home);
