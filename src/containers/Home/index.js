@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { setTextAction } from "../../actions/textActions";
 import { Textarea } from "../../components/Textarea";
+import { Button } from "../../components/Button";
 import "./style.scss";
 
 const Home = props => {
@@ -32,7 +33,7 @@ const Home = props => {
         />
         <div className="linkContainer">
           <Link to={"/layout"}>
-            <button onClick={setTextToStore}>LAYOUT</button>
+            <Button onClick={setTextToStore} text={"LAYOUT"} />
           </Link>
         </div>
       </div>

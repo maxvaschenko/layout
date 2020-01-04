@@ -5,6 +5,7 @@ import { Textarea } from "../../components/Textarea";
 import { setTextAction } from "../../actions/textActions";
 import * as nanoid from "nanoid";
 import { columnsChangingHandler } from "../../utils";
+import "./styles.scss";
 
 const Layout = props => {
   const [id] = React.useState(nanoid);
@@ -42,6 +43,7 @@ const Layout = props => {
 
     changeTextInColumns([...updatedTextsList]);
   };
+
   return (
     <div className="Layout">
       <div className="Layout_buttons-container">
