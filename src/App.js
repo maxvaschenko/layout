@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./App.css";
 import Home from "./containers/Home";
 import Layout from "./containers/Layout";
 import { Provider } from "react-redux";
 import { configureStore } from "./store";
+import "./App.css";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Provider store={configureStore()}>
@@ -19,6 +19,6 @@ function App() {
       </Provider>
     </div>
   );
-}
+};
 
 export default App;

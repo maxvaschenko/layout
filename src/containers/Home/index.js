@@ -15,6 +15,7 @@ const Home = props => {
   }, []);
 
   const changeTextAreaValue = e => {
+    e.preventDefault();
     changeInitialText(e.target.value);
   };
 
