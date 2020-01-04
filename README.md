@@ -10,3 +10,6 @@ React coding task «Text Layout»
 
 Use React.js/Typescript
 Result should be provided as a code on Github + hosted version (Github pages would be fine, but if you have any other hosting - feel free to use it)
+
+
+Deployed project: https://layout-test-task.netlify.com/
