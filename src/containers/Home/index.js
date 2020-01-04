@@ -3,6 +3,7 @@ import "./style.scss";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { setTextAction } from "../../actions/textActions";
+import { Textarea } from "../../components/Textarea";
 
 const Home = props => {
   const [initialText, changeInitialText] = useState("");
@@ -22,14 +23,7 @@ const Home = props => {
 
   return (
     <div className="Home">
-      <textarea
-        name="text-area"
-        id="initial-text-area"
-        cols="80"
-        rows="10"
-        value={initialText}
-        onChange={changeTextAreaValue}
-      />
+      <Textarea value={initialText} onChange={changeTextAreaValue} />
       <Link to={"/layout"}>
         <button onClick={setTextToStore}>LAYOUT</button>
       </Link>

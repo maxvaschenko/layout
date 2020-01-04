@@ -8,3 +8,5 @@ export default (state = { data: "" }, action) => {
       return state;
   }
 };
+
+export const textSelector = state => state.text.data;
