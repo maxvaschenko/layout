@@ -5,11 +5,15 @@ import { Textarea } from "../../components/Textarea";
 import { setTextAction } from "../../actions/textActions";
 import * as nanoid from "nanoid";
 import { columnsChangingHandler } from "../../utils";
+import { Button } from "../../components/Button";
+import one from "../../assets/img/one.svg";
+import two from "../../assets/img/two.svg";
+import three from "../../assets/img/three.svg";
 import "./styles.scss";
 
 const Layout = props => {
   const [id] = React.useState(nanoid);
-  const [columns, changeColumns] = useState(2);
+  const [columns, changeColumns] = useState(1);
   const [textInColumns, changeTextInColumns] = useState([]);
   const { text, setTextAction } = props;
 
@@ -46,27 +50,42 @@ const Layout = props => {
 
   return (
     <div className="Layout">
-      <div className="Layout_buttons-container">
-        <div className="Layout_buttons-item" onClick={changeColumnsValue(1)}>
-          1 column
+      <div className="Layout_buttons">
+        <div className="Layout_buttons-item">
+          <Button
+            onClick={changeColumnsValue(1)}
+            text={"column"}
+            image={one}
+          />
         </div>
-        <div className="Layout_buttons-item" onClick={changeColumnsValue(2)}>
-          2 column
+        <div className="Layout_buttons-item">
+          <Button
+            onClick={changeColumnsValue(2)}
+            text={"column"}
+            image={two}
+          />
         </div>
-        <div className="Layout_buttons-item" onClick={changeColumnsValue(3)}>
-          3 column
+        <div className="Layout_buttons-item">
+          <Button
+            onClick={changeColumnsValue(3)}
+            text={"column"}
+            image={three}
+          />
         </div>
       </div>
-
-      {textInColumns.map((item, index) => {
-        return (
-          <Textarea
-            value={item.text}
-            onChange={setTextToStore(item.id)}
-            key={id + index}
-          />
-        );
-      })}
+      <div className="Layout_textListContainer">
+        {textInColumns.map((item, index) => {
+          return (
+            <Textarea
+              value={item.text}
+              onChange={setTextToStore(item.id)}
+              key={id + index}
+              rows={"50"}
+              className={"mr-2"}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };

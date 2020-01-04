@@ -5,7 +5,7 @@ import "./styles.scss";
 export const Textarea = props => {
   const [id] = React.useState(nanoid);
   const [name] = React.useState(nanoid);
-  const { value, onChange, cols = "80", rows = "10" } = props;
+  const { value, onChange, cols = "80", rows = "10", className = "" } = props;
   return (
     <textarea
       name={`textarea-${name}`}
@@ -15,6 +15,7 @@ export const Textarea = props => {
       value={value}
       onChange={onChange}
       autoFocus
+      className={className}
     />
   );
 };
