@@ -29,7 +29,7 @@ const Layout = props => {
     const modifiedText = textInColumns.reduce((accum, current) => {
       return [...accum, current.text];
     }, []);
-    setTextAction(modifiedText.join(""));
+    setTextAction(modifiedText.join(" "));
     changeColumns(val);
   };
 
